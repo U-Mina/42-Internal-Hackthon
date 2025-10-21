@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { Student, Project } from '../../types';
-import ProgressBar from '../common/ProgressBar';
+import ProgressBar from '../../components/common/ProgressBar';
 
 const dummyStudentData: Student = {
     id: 1,

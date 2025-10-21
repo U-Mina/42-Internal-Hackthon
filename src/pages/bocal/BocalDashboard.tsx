@@ -1,6 +1,6 @@
 import React from 'react';
 import { Student } from '../../types';
-import ProgressBar from '../common/ProgressBar'; // Assuming you have a ProgressBar component
+import ProgressBar from '../../components/common/ProgressBar'; // Assuming you have a ProgressBar component
 
 // Sample data - later this will come from an API call
 const mockStudents: Student[] = [
