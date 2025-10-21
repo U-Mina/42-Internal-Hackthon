@@ -1,20 +1,19 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import "./Login.css";
 
-interface LoginProps {
-  onLoginSuccess: () => void;
-}
-
-const Login: React.FC<LoginProps> = ({ onLoginSuccess }) => {
+const Login: React.FC = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const history = useHistory();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // 🔒 TODO: Replace this with real authentication later
+    // Dummy login check — replace with real logic later
     if (username === "student" && password === "42") {
-      onLoginSuccess();
+      localStorage.setItem("isAuthenticated", "true");
+      history.push("/"); // Redirect to dashboard
     } else {
       alert("Invalid credentials");
     }

@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import Login from 'components/Login';
+import React from 'react';
+import ProtectedRoute from 'components/ProtectedRouter';
+import Login from 'components/login/Login';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import StudentDashboard from './components/student/StudentDashboard';
 import ProjectDetail from './components/student/ProjectDetail';
