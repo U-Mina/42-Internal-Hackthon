@@ -240,9 +240,19 @@ const StudentDashboard: React.FC = () => {
                     {/* Current Focus Section */}
                     {currentProject && (
                         <section className="current-focus-section">
+                        <div className="current-focus-header">
                             <h2>Current Focus</h2>
+                            <button
+                                className="add-project-btn"
+                                title="Add new project"
+                                onClick={handleAddProjectClick}
+                            >
+                                +
+                            </button>
+                        </div>
                             <div className="current-project-card">
                                 <h3>{currentProject.project.name}</h3>
+
                                 <p className="estimated-time-focus">Estimated: {currentProject.estimated_time}</p>
                                 <div className="helper-line">
                                     <p>Need help? <strong>{mockHelper.name}</strong> is also on this project.</p>

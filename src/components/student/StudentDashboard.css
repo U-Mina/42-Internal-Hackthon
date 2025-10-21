@@ -189,6 +189,13 @@
     color: #0056b3;
 }
 
+.current-focus-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
 .current-project-card {
     background-color: #fff;
     padding: 16px;
