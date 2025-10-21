@@ -3,5 +3,5 @@ dist
 .vscode/*
 
 .env
-
+api.ts
 node_modules

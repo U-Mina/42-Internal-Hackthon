@@ -1,0 +1,45 @@
+{
+  "name": "42-progress-protector-frontend",
+  "version": "1.0.0",
+  "description": "A web application to help students organize their learning time, track project progress, and improve time management skills.",
+  "main": "src/index.tsx",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "keywords": [
+    "education",
+    "progress",
+    "time management",
+    "react"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^5.3.0",
+    "react-scripts": "4.0.3",
+    "typescript": "^4.1.2"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@types/react-router-dom": "^5.3.0",
+    "@types/minimatch": "^5.1.2"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
