@@ -422,3 +422,27 @@
     text-decoration: line-through;
     color: #999;
 }
+
+/* Motivation Card Section */
+.motivation-card {
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    color: white;
+    padding: 24px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 16px;
+}
+
+.motivation-card h3 {
+    margin: 0 0 12px 0;
+    font-size: 18px;
+    font-weight: 600;
+    opacity: 0.9;
+}
+
+.motivation-card p {
+    margin: 0;
+    font-size: 16px;
+    font-style: italic;
+}

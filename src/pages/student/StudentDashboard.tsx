@@ -5,6 +5,7 @@ import CurrentFocus from '../../components/student/CurrentFocus';
 import ProjectGoals from '../../components/student/ProjectGoals';
 import ProjectList from '../../components/student/ProjectList';
 import PomodoroTimer from '../../components/student/PomodoroTimer';
+import MotivationCard from '../../components/student/MotivationCard';
 
 // Mock data inspired by the 42 API structure (/v2/me)
 const mockUser = {
@@ -177,6 +178,8 @@ const StudentDashboard: React.FC = () => {
                 {/* Right Side - Pomodoro Timer */}
                 <PomodoroTimer />
             </div>
+
+            <MotivationCard />
         </div>
     );
 };
