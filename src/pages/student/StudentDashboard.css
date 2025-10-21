@@ -417,3 +417,8 @@
     width: 18px;
     height: 18px;
 }
+
+.task-text.completed {
+    text-decoration: line-through;
+    color: #999;
+}
