@@ -40,9 +40,6 @@ const ProfileHeader: React.FC<ProfileHeaderProps> = ({ user, level, paceStatus, 
                     <p>@{user.login}</p>
                 </div>
                 <CoalitionFlag />
-            </div>
-
-            <div className="profile-right">
                 <div className="xp-tracker">
                     <div className="level-text">
                         Level {levelInteger} <span className="level-decimal">.{levelDecimal}%</span>
@@ -51,6 +48,9 @@ const ProfileHeader: React.FC<ProfileHeaderProps> = ({ user, level, paceStatus, 
                         <div className="xp-bar" style={{ width: `${levelDecimal}%` }}></div>
                     </div>
                 </div>
+            </div>
+
+            <div className="profile-right">
                 <PaceIndicator status={paceStatus} />
                 <button className="notification-button" onClick={() => alert('Notifications clicked!')}>
                     <NotificationsIcon hasNotifications={hasNotifications} />

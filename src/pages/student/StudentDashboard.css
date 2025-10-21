@@ -8,8 +8,8 @@
 
 /* Profile Header Section */
 .profile-header {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://cdn.intra.42.fr/coalition/cover/159/42HN-Coalition-Banner-Foxes.jpeg');
-    background-size: contain;
+    background-image: linear-gradient(#6c757d, rgba(0, 0, 0, 0.3)), url(https://cdn.intra.42.fr/coalition/cover/159/42HN-Coalition-Banner-Foxes.jpeg);
+    background-size: cover;
     background-position: center;
     color: white;
     padding: 16px 24px;
@@ -19,6 +19,7 @@
     align-items: center;
     justify-content: space-between;
     margin-bottom: 24px;
+    min-height: 110px;
 }
 
 .profile-left, .profile-right {
@@ -97,8 +98,8 @@
 
 /* Pace Alert */
 .pace-alert {
-    width: 28px;
-    height: 28px;
+    width: 26px;
+    height: 26px;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
