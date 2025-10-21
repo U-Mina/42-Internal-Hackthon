@@ -5,6 +5,8 @@ import CurrentFocus from '../../components/student/CurrentFocus';
 import ProjectGoals from '../../components/student/ProjectGoals';
 import ProjectList from '../../components/student/ProjectList';
 import PomodoroTimer from '../../components/student/PomodoroTimer';
+import MotivationCard from '../../components/student/MotivationCard';
+import ProjectTimeline from '../../components/student/ProjectTimeline';
 
 // Mock data inspired by the 42 API structure (/v2/me)
 const mockUser = {
@@ -152,14 +154,35 @@ const StudentDashboard: React.FC = () => {
         }
     }, [currentProject]);
 
+    // Mock data for ProjectTimeline
+    const timelineData = {
+        deadline: new Date('2025-10-30T23:59:59'),
+        startDate: new Date('2024-01-01T00:00:00'),
+        totalTasks: 15, // Assuming a total number of tasks for the curriculum
+        completedTasks: projectSteps.filter(s => s.completed).length + 4, // Completed steps in current project + some from past projects
+    };
+
+    // Mock data for new header
+    const headerData: {
+        level: number;
+        paceStatus: 'ahead' | 'on-track' | 'behind';
+        hasNotifications: boolean;
+    } = {
+        level: 5.3,
+        paceStatus: 'on-track',
+        hasNotifications: true,
+    };
+
+
     return (
         <div className="student-dashboard">
-            <ProfileHeader user={mockUser} />
+            <ProfileHeader user={mockUser} {...headerData} />
 
             {/* Main Content Area - Left side vertical + Right side Pomodoro */}
             <div className="main-content">
                 {/* Left Side - Profile sections */}
                 <div className="left-column">
+                    <ProjectTimeline {...timelineData} />
                     {/* Current Focus Section */}
                     {currentProject && (
                         <CurrentFocus project={currentProject} helper={mockHelper} />
@@ -175,7 +198,10 @@ const StudentDashboard: React.FC = () => {
                 </div>
 
                 {/* Right Side - Pomodoro Timer */}
-                <PomodoroTimer />
+                <div className="right-column">
+                    <MotivationCard />
+                    <PomodoroTimer />
+                </div>
             </div>
         </div>
     );
