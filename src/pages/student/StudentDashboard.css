@@ -8,35 +8,130 @@
 
 /* Profile Header Section */
 .profile-header {
-    background-color: white;
-    padding: 20px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://cdn.intra.42.fr/coalition/cover/159/42HN-Coalition-Banner-Foxes.jpeg');
+    background-size: contain;
+    background-position: center;
+    color: white;
+    padding: 16px 24px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     display: flex;
     align-items: center;
+    justify-content: space-between;
     margin-bottom: 24px;
 }
 
+.profile-left, .profile-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
 .profile-picture {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    background-color: #ccc; /* Placeholder color */
-    margin-right: 16px;
-    /* In a real app, you would use an <img> tag here */
+    object-fit: cover;
 }
 
 .profile-info h1 {
     margin: 0;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 600;
-    color: #1c1e21;
+    color: white;
 }
 
 .profile-info p {
     margin: 0;
-    font-size: 16px;
-    color: #65676b;
+    font-size: 14px;
+    color: #e0e0df;
+}
+
+/* Coalition Flag */
+.coalition-flag {
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+
+.coalition-logo {
+    position: absolute;
+    fill: white;
+    stroke: white;
+}
+
+
+/* XP Tracker */
+.xp-tracker {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 120px;
+}
+
+.level-text {
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+}
+
+.level-decimal {
+    font-size: 12px;
+    color: #e0e0df;
+}
+
+.xp-bar-container {
+    width: 100%;
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.xp-bar {
+    height: 100%;
+    background-color: #5e00a6;
+    border-radius: 4px;
+    transition: width 0.3s ease-in-out;
+}
+
+/* Pace Alert */
+.pace-alert {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: grid;
+    place-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Notifications Icon */
+.notification-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.notifications-icon {
+    position: relative;
+    cursor: pointer;
+    color: white;
+}
+
+.notification-dot {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 8px;
+    height: 8px;
+    background-color: red;
+    border-radius: 50%;
+    border: 1px solid white;
 }
 
 /* Projects Section */
@@ -53,11 +148,17 @@
 .main-content {
     display: flex;
     gap: 16px;
-    margin-bottom: 24px;
 }
 
 .left-column {
     flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.right-column {
+    flex: 1;
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -423,26 +524,73 @@
     color: #999;
 }
 
+/* Project Timeline Section */
+.project-timeline-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.project-timeline-section h2 {
+    margin: 0 0 16px 0;
+    font-size: 20px;
+    font-weight: 600;
+    border-bottom: 1px solid #e0e0df;
+    padding-bottom: 16px;
+}
+
+.timeline-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.deadline-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.deadline-info span {
+    font-size: 14px;
+    color: #65676b;
+}
+
+.deadline-info strong {
+    font-size: 18px;
+    color: #1c1e21;
+}
+
+.pace-info {
+    text-align: right;
+}
+
+.pace-info p {
+    margin: 8px 0 0 0;
+    font-size: 12px;
+    color: #65676b;
+}
+
 /* Motivation Card Section */
 .motivation-card {
     background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
     color: white;
-    padding: 24px;
+    padding: 20px;
     border-radius: 8px;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-top: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .motivation-card h3 {
-    margin: 0 0 12px 0;
-    font-size: 18px;
+    margin: 0 0 10px 0;
+    font-size: 16px;
     font-weight: 600;
     opacity: 0.9;
 }
 
 .motivation-card p {
     margin: 0;
-    font-size: 16px;
+    font-size: 14px;
     font-style: italic;
 }
