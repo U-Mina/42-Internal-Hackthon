@@ -18,29 +18,6 @@ const Login: React.FC = () => {
       alert("Invalid credentials");
     }
   };
-
-  // return (
-  //   <div className="login-container">
-  //     <h2>42 Progress Protector</h2>
-  //     <form onSubmit={handleSubmit}>
-  //       <input
-  //         type="text"
-  //         placeholder="Username"
-  //         value={username}
-  //         onChange={(e) => setUsername(e.target.value)}
-  //         required
-  //       />
-  //       <input
-  //         type="password"
-  //         placeholder="Password"
-  //         value={password}
-  //         onChange={(e) => setPassword(e.target.value)}
-  //         required
-  //       />
-  //       <button type="submit">Login</button>
-  //     </form>
-  //   </div>
-  // );
     return (
     <div className="login-page">
       <div className="login-container">
@@ -64,7 +41,10 @@ const Login: React.FC = () => {
               required
             />
           </div>
-          <button type="submit">Login</button>
+          <button type="submit" className="cta">
+            <span>Login</span>
+            <span>→</span>
+          </button>
         </form>
       </div>
     </div>

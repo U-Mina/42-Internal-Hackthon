@@ -2,7 +2,8 @@ body, html {
   height: 100%;
   margin: 0;
   font-family: "Poppins", sans-serif;
-  background: #e0e0e0;
+  /* background: #e0e0e0; */
+  background: #bab5c5;
 }
 
 .login-page {
@@ -17,7 +18,9 @@ body, html {
   background: #e0e0e0;
   opacity: 5;
   border-radius: 20px;
-  box-shadow: 8px 8px 16px #bebebe, -8px -8px 16px #ffffff;
+  /* box-shadow: 8px 8px 16px #bebebe, -8px -8px 16px #ffffff; */
+  box-shadow: 8px 8px 16px #867d9a, -8px -8px 16px #ffffff;
+  /* box-shadow: #FBC638; */
   padding: 40px 50px;
   width: 340px;
   text-align: center;
@@ -26,7 +29,8 @@ body, html {
 
 .login-container:hover {
   transform: scale(1.1);
-  box-shadow: 10px 10px 20px #bebebe, -10px -10px 20px #ffffff;
+  /* box-shadow: 10px 10px 20px #bebebe, -10px -10px 20px #ffffff; */
+  box-shadow: 10px 10px 20px #eed180, -10px -10px 20px #ffffff;
 }
 
 .login-container h2 {
@@ -49,6 +53,7 @@ body, html {
   outline: none;
   position: relative;
   background: #e0e0e0;
+  /* background: #FBC638; */
   border-radius: 12px;
   box-shadow: inset 4px 4px 8px #bebebe,
               inset -4px -4px 8px #ffffff;
@@ -64,7 +69,7 @@ body, html {
   transition: all 0.2s ease-in-out;
 }
 
-button {
+/* button {
   width: 60%;
   padding: 12px;
   border: none;
@@ -84,6 +89,48 @@ button:hover {
 
 button:active {
   transform: scale(0.98);
+} */
+
+.cta {
+    display: flex;
+    padding: 10px 45px;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px; /* adjust for login form */
+    color: white;
+    background: #867d9a;
+    transition: 1s;
+    box-shadow: 6px 6px 0 rgb(159, 161, 161);
+    transform: skewX(-15deg);
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.cta:focus {
+    outline: none; 
+}
+
+.cta:hover {
+    transition: 0.5s;
+    box-shadow: 10px 10px 0 #FBC638;
+}
+
+.cta span {
+    transform: skewX(15deg);
+}
+
+.cta span:nth-child(2) {
+    width: 20px;
+    margin-left: 30px;
+    position: relative;
+    top: 12%;
+    transition: 0.5s;
+}
+
+.cta:hover span:nth-child(2) {
+    margin-right: 45px;
+    transition: 0.5s;
 }
 
 @keyframes fadeIn {
