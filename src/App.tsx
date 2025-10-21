@@ -11,10 +11,12 @@ const App: React.FC = () => {
   return (
     <Router>
       <Switch>
-        <Route path="/" exact component={StudentDashboard} />
-        <Route path="/project/:id" component={ProjectDetail} />
-        <Route path="/bocal" exact component={BocalDashboard} />
-        <Route path="/bocal/student/:id" component={StudentDetail} />
+        <Route path="/login" component={Login} />
+        
+        <ProtectedRoute path="/" exact component={StudentDashboard} />
+        <ProtectedRoute path="/project/:id" component={ProjectDetail} />
+        <ProtectedRoute path="/bocal" exact component={BocalDashboard} />
+        <ProtectedRoute path="/bocal/student/:id" component={StudentDetail} />
       </Switch>
     </Router>
   );
