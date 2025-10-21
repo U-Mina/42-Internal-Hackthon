@@ -105,6 +105,23 @@ const StudentDashboard: React.FC = () => {
     // Project Steps State
     const [projectSteps, setProjectSteps] = React.useState<ProjectStep[]>([]);
 
+    const [newGoalTitle, setNewGoalTitle] = React.useState('');
+    const [newGoalTime, setNewGoalTime] = React.useState('');
+
+    const addGoal = () => {
+        if (!newGoalTitle.trim()) return;
+        const newStep: ProjectStep = {
+            id: Date.now(),
+            title: newGoalTitle,
+            estimatedTime: newGoalTime || 'N/A',
+            completed: false,
+        };
+        setProjectSteps([...projectSteps, newStep]);
+        setNewGoalTitle('');
+        setNewGoalTime('');
+    };
+
+
     React.useEffect(() => {
         let interval: NodeJS.Timeout;
         if (timerRunning && timeLeft > 0) {
@@ -266,6 +283,30 @@ const StudentDashboard: React.FC = () => {
                         <section className="project-goals-section">
                             <div className="goals-header">
                                 <h2>Goals</h2>
+                                {/* Add New Goal Inputs */}
+                                <div className="add-goal-form">
+                                    <input
+                                        type="text"
+                                        placeholder="Write goal description..."
+                                        value={newGoalTitle}
+                                        onChange={(e) => setNewGoalTitle(e.target.value)}
+                                        className="goal-input"
+                                    />
+                                    <input
+                                        type="text"
+                                        placeholder="Estimated time (e.g. 2 hours)"
+                                        value={newGoalTime}
+                                        onChange={(e) => setNewGoalTime(e.target.value)}
+                                        className="goal-input-time"
+                                    />
+                                    <button
+                                        className="add-goal-btn"
+                                        title="Add goal"
+                                        onClick={addGoal}
+                                    >
+                                        +
+                                    </button>
+                                </div>
                             </div>
 
                             <div className="goals-list">
@@ -284,6 +325,7 @@ const StudentDashboard: React.FC = () => {
                             </div>
                         </section>
                     )}
+
 
                     {/* My Projects Section */}
                     <section className="projects-section">
