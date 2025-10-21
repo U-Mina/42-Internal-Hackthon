@@ -1,6 +1,6 @@
 import React from 'react';
 import ProtectedRoute from 'components/ProtectedRouter';
-import Login from 'components/login/Login';
+import Login from 'pages/login/Login';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import StudentDashboard from './pages/student/StudentDashboard';
 import ProjectDetail from './pages/student/ProjectDetail';
