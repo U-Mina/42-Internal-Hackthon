@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import StudentDashboard from './components/student/StudentDashboard';
-import ProjectDetail from './components/student/ProjectDetail';
-import BocalDashboard from './components/bocal/BocalDashboard';
-import StudentDetail from './components/bocal/StudentDetail';
+import StudentDashboard from './pages/student/StudentDashboard';
+import ProjectDetail from './pages/student/ProjectDetail';
+import BocalDashboard from './pages/bocal/BocalDashboard';
+import StudentDetail from './pages/bocal/StudentDetail';
 
 const App: React.FC = () => {
   return (
