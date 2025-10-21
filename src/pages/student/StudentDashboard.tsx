@@ -84,7 +84,21 @@ interface ProjectStep {
 const StudentDashboard: React.FC = () => {
     // Project Steps State
     const [projectSteps, setProjectSteps] = React.useState<ProjectStep[]>([]);
+    const [newGoalTitle, setNewGoalTitle] = React.useState('');
+    const [newGoalTime, setNewGoalTime] = React.useState('');
 
+    const addGoal = () => {
+        if (!newGoalTitle.trim()) return;
+        const newStep: ProjectStep = {
+            id: Date.now(),
+            title: newGoalTitle,
+            estimatedTime: newGoalTime || 'N/A',
+            completed: false,
+        };
+        setProjectSteps([...projectSteps, newStep]);
+        setNewGoalTitle('');
+        setNewGoalTime('');
+    };
     const toggleStepCompletion = (id: number) => {
         setProjectSteps(projectSteps.map(step =>
             step.id === id ? { ...step, completed: !step.completed } : step
@@ -185,12 +199,20 @@ const StudentDashboard: React.FC = () => {
                     <ProjectTimeline {...timelineData} />
                     {/* Current Focus Section */}
                     {currentProject && (
-                        <CurrentFocus project={currentProject} helper={mockHelper} />
+                        <CurrentFocus project={currentProject} helper={mockHelper} onAddProjectClick={handleAddProjectClick} />
                     )}
 
                     {/* Project Goals Section */}
                     {currentProject && (
-                        <ProjectGoals steps={projectSteps} onToggleStep={toggleStepCompletion} />
+                        <ProjectGoals
+                            steps={projectSteps}
+                            onToggleStep={toggleStepCompletion}
+                            newGoalTitle={newGoalTitle}
+                            setNewGoalTitle={setNewGoalTitle}
+                            newGoalTime={newGoalTime}
+                            setNewGoalTime={setNewGoalTime}
+                            addGoal={addGoal}
+                        />
                     )}
 
                     {/* My Projects Section */}

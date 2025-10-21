@@ -10,12 +10,22 @@ interface CurrentFocusProps {
     helper: {
         name: string;
     };
+    onAddProjectClick: () => void;
 }
 
-const CurrentFocus: React.FC<CurrentFocusProps> = ({ project, helper }) => {
+const CurrentFocus: React.FC<CurrentFocusProps> = ({ project, helper, onAddProjectClick }) => {
     return (
         <section className="current-focus-section">
-            <h2>Current Focus</h2>
+            <div className="current-focus-header">
+                <h2>Current Focus</h2>
+                <button
+                    className="add-project-btn"
+                    title="Add new project"
+                    onClick={onAddProjectClick}
+                >
+                                    +
+                </button>
+            </div>
             <div className="current-project-card">
                 <h3>{project.project.name}</h3>
                 <p className="estimated-time-focus">Estimated: {project.estimated_time}</p>

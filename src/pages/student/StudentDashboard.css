@@ -291,6 +291,13 @@
     color: #0056b3;
 }
 
+.current-focus-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
 .current-project-card {
     background-color: #fff;
     padding: 16px;
@@ -518,6 +525,36 @@
     cursor: pointer;
     width: 18px;
     height: 18px;
+}
+
+.add-goal-form {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.goal-input,
+.goal-input-time {
+    flex: 1;
+    padding: 0.4rem 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.add-goal-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.5rem 0.8rem;
+    border-radius: 6px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.add-goal-btn:hover {
+    background-color: #0056b3;
 }
 
 .task-text.completed {

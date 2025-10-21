@@ -10,13 +10,42 @@ interface ProjectStep {
 interface ProjectGoalsProps {
     steps: ProjectStep[];
     onToggleStep: (id: number) => void;
+    newGoalTitle: string;
+    setNewGoalTitle: (value: string) => void;
+    newGoalTime: string;
+    setNewGoalTime: (value: string) => void;
+    addGoal: () => void;
 }
 
-const ProjectGoals: React.FC<ProjectGoalsProps> = ({ steps, onToggleStep }) => {
+const ProjectGoals: React.FC<ProjectGoalsProps> = ({ steps, onToggleStep, newGoalTitle, setNewGoalTitle, newGoalTime, setNewGoalTime, addGoal }) => {
     return (
         <section className="project-goals-section">
             <div className="goals-header">
                 <h2>Goals</h2>
+                {/* Add New Goal Inputs */}
+                                <div className="add-goal-form">
+                                    <input
+                                        type="text"
+                                        placeholder="Write goal description..."
+                                        value={newGoalTitle}
+                                        onChange={(e) => setNewGoalTitle(e.target.value)}
+                                        className="goal-input"
+                                    />
+                                    <input
+                                        type="text"
+                                        placeholder="Estimated time (e.g. 2 hours)"
+                                        value={newGoalTime}
+                                        onChange={(e) => setNewGoalTime(e.target.value)}
+                                        className="goal-input-time"
+                                    />
+                                    <button
+                                        className="add-goal-btn"
+                                        title="Add goal"
+                                        onClick={addGoal}
+                                    >
+                                        +
+                                    </button>
+                                </div>
             </div>
 
             <div className="goals-list">
